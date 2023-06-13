@@ -1,1 +1,4 @@
-from criptoquery import controller
+from criptoquery.controller import Controller
+
+c = Controller()
+c.mainloop()

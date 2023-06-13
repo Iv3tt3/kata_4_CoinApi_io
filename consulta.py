@@ -19,13 +19,13 @@ fiat = test_input(fiats, "En que la quieres?")
 
 url = f"https://rest.coinapi.io/v1/exchangerate/{cripto}/{fiat}?apikey={apikey}"
 
-try: #Esto lo ponemos para evitar si sale un error debido a la peticion, a la libreria requests, y cogemos el error mas gordo.
+try: 
     response = requests.get(url)
 
-    data = response.json() #Este metodo es para deserializar el json y pasar de texto a un diccionario. Siempre y cuando el texto sea un json bien serializado
+    data = response.json() 
 
     if response.status_code == 200:
-        print(f'1 {cripto} vale {data["rate"]:.2f} {fiat}') #Cuidado con las comillas
+        print(f'1 {cripto} vale {data["rate"]:.2f} {fiat}') 
     else:
         print(response.status_code, "-", data['error'])
 
