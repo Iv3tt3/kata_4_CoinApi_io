@@ -1,0 +1,1 @@
+from criptoquery import controller
